@@ -1,17 +1,35 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "_version": "18.2.0",
+  "compilerOptions": {
+    "lib": [
+      "es2022",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "esnext",
+    "target": "es2022",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true
+  },
+  "include": [
+    "src"
+  ],
+  "filesGlob": [
+    "**/*.ts"
+  ],
 
-    "$schema": "https://json.schemastore.org/tsconfig",
-
-    "_version": "18.2.0",
-
-    "compilerOptions": {
-        "lib": ["es2023"],
-        "module": "node16",
-        "target": "es2022",
-
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "moduleResolution": "node16"
-    }
+  "atom": {
+    "rewriteTsconfig": false
+  }
 }

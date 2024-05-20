@@ -1,9 +1,9 @@
-import {Profile} from "./components/screens/ImageUser";
+import React from "react";
 
 export default function App() {
     return (
         <div>
-            <Profile />
+           //code
         </div>
     )
 }
