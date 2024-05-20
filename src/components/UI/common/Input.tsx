@@ -6,5 +6,5 @@ interface InputProps{
     value?: string
 }
 export default function Input(props: InputProps) {
-    return <Input className={props.className} type={props.type} placeholder={props.placeholder} value={props.value} data-id = {props.dataId}/>;
+    return <input className={props.className} type={props.type} placeholder={props.placeholder} value={props.value} data-id = {props.dataId}/>;
 }

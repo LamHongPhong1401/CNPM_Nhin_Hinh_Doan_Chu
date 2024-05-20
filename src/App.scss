@@ -1,0 +1,42 @@
+$bg-container: #68d2e8;
+$bg-component: #feefad;
+$color-border: #fdde55;
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+.game-page{
+  background-color: $bg-container;
+}
+
+.top-frame {
+  button{
+    border-color: $color-border;
+  }
+  button:hover{
+    background-color: $color-border;
+    border-color: black;
+  }
+}
+
+.image__question{
+  @include box(250px, 300px)
+}
+.square__input{
+  @include box(100px, auto);
+  outline: none;
+}
+.check-answer {
+  @include box(160px, auto);
+  outline: none;
+}
+.check-answer:hover{
+  background-color: white;
+  border-color: $color-border;
+  color: $bg-container;
+}
+ul, li, ol{
+  list-style-type: none;
+}

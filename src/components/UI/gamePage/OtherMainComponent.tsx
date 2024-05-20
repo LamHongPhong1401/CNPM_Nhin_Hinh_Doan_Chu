@@ -1,4 +1,4 @@
-interface IQuestionFrame {
+export interface IQuestionFrame {
     className: string,
     question: {
         className: string,
@@ -8,7 +8,7 @@ interface IQuestionFrame {
 export  function Question(props: IQuestionFrame) {
     return (
         <>
-            <div className={props.className}>
+            <div className={props.className}> Câu Hỏi:
                 <p className={props.question.className}>{props.question.text}</p>
             </div>
         </>
