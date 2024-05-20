@@ -1,5 +1,5 @@
 import Button from "../UI/common/Button";
-import {Question} from "../UI/gamePage/OtherMainComponent";
+import {ChangeStateDialog, Question} from "../UI/gamePage/OtherMainComponent";
 import {LoremIpsum} from 'lorem-ipsum';
 import '../../css/bootstrap.min.css'
 import Image from "../UI/common/Image";
@@ -53,13 +53,7 @@ function MiddleFrame() {
                         <ImageAndSquare/>
                         <ImageAndSquare/>
                     </div>
-
-                    <div className="d-flex  flex-column align-items-center">
-                        <Button className={'check-answer  fw-bold btn btn-primary rounded-1'} type={'button'}
-                                onClick={() => void {}} disabled={false}>
-                            <span>Kiểm Tra</span>
-                        </Button>
-                    </div>
+                    <ChangeStateDialog />
                 </div>
                 <div className="col-3 p-2">
                     <div className="time-line"></div>
@@ -76,7 +70,7 @@ function ImageAndSquare() {
                 <Image className={'image__question border border-3 rounded-1 border-black object-fit-fill'}
                        src={'https://i.pinimg.com/236x/b7/3d/2c/b73d2c8c455074a76f4b8964a6bcf732.jpg'} alt={'test'}
                        dataId={'1'}/>
-                <Input className={'square__input rounded-1 my-3 ps-2 border border-0 '} type={'text'} dataId={'1'}/>
+                <Input className={'square__input p-2 rounded-1 my-3 ps-2 border border-0 '} type={'text'} dataId={'1'}/>
             </div>
         </>
     )
@@ -88,6 +82,7 @@ export default function GamePage() {
             <div className="game-page rounded-1 container mt-4 p-3">
                 <TopFrame/>
                 <MiddleFrame/>
+
             </div>
         </>
     )

@@ -7,11 +7,12 @@ interface DialogProps {
     body: string;
     show: boolean;
     handleClose: () => void;
+    className?: string
 }
 
 const Dialog: React.FC<DialogProps> = (props: DialogProps) => {
     return (
-        <Modal show={props.show} onHide={props.handleClose}>
+        <Modal className={props.className} show={props.show} onHide={props.handleClose}>
             <Modal.Header closeButton>
                 <Modal.Title>{props.title}</Modal.Title>
             </Modal.Header>
@@ -19,9 +20,6 @@ const Dialog: React.FC<DialogProps> = (props: DialogProps) => {
             <Modal.Footer>
                 <Button variant="secondary" onClick={props.handleClose}>
                     Close
-                </Button>
-                <Button variant="primary" onClick={props.handleClose}>
-                    Save Changes
                 </Button>
             </Modal.Footer>
         </Modal>
