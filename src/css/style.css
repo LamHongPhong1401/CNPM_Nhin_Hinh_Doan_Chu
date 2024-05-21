@@ -13,6 +13,7 @@ body, html {
     justify-content: center;
     align-items: center;
     text-align: center;
+    position: relative;
 }
 
 .game-title {
@@ -35,6 +36,23 @@ body, html {
 
 .new-game-button:hover {
     background-color: #45a049;
+}
+
+.confirm-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1000; /* Ensure it is on top */
+}
+
+.error-message {
+    color: red;
 }
 
 .game-control {
@@ -85,4 +103,13 @@ body, html {
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.control-buttons button:hover {
+    background-color: #45a049;
 }
