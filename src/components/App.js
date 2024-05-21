@@ -6,27 +6,39 @@ import '../css/style.css';
 const App = () => {
     const [isPaused, setIsPaused] = useState(false);
     const [isGameStarted, setIsGameStarted] = useState(false);
-    const [key, setKey] = useState(0); // Thêm trạng thái key để quản lý việc reset
+    const [key, setKey] = useState(0);
+    const [error, setError] = useState(null);
+    const [showConfirm, setShowConfirm] = useState(false);
 
     const newGame = () => {
-        console.log('New game started');
-        setIsPaused(false);
-        setIsGameStarted(true);
-        setKey(prevKey => prevKey + 1); // Reset key khi bắt đầu trò chơi mới
+        setShowConfirm(true);
+    };
+
+    const confirmNewGame = () => {
+        setShowConfirm(false);
+        setError(null);
+        try {
+            setIsPaused(false);
+            setIsGameStarted(true);
+            setKey(prevKey => prevKey + 1);
+        } catch (e) {
+            setError('Please try again');
+        }
+    };
+
+    const cancelNewGame = () => {
+        setShowConfirm(false);
     };
 
     const continueGame = () => {
-        console.log('Game continued');
         setIsPaused(false);
     };
 
     const resetGame = () => {
-        console.log('Game reset');
-        setKey(prevKey => prevKey + 1); // Reset key để load lại GameControl
+        setKey(prevKey => prevKey + 1);
     };
 
     const mainMenu = () => {
-        console.log('Returning to main menu');
         setIsGameStarted(false);
         setIsPaused(false);
     };
@@ -38,10 +50,20 @@ const App = () => {
     return (
         <div>
             {!isGameStarted ? (
-                <Game onNewGame={newGame} />
+                <div>
+                    {showConfirm && (
+                        <div className="confirm-dialog">
+                            <p>Do you want to start a new game?</p>
+                            <button onClick={confirmNewGame}>YES</button>
+                            <button onClick={cancelNewGame}>NO</button>
+                        </div>
+                    )}
+                    <Game onNewGame={newGame} />
+                    {error && <p className="error-message">{error}</p>}
+                </div>
             ) : (
                 <GameControl
-                    key={key} // Sử dụng key để reset thành phần
+                    key={key}
                     onPause={togglePause}
                     onReset={resetGame}
                     onMainMenu={mainMenu}

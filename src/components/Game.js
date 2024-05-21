@@ -9,8 +9,8 @@ const Game = ({ onNewGame }) => {
 
     return (
         <div className="game-container" style={gameContainerStyle}>
-            <h1 className="game-title">Nhìn Hình Đoán Chữ</h1>
-            <button className="new-game-button" onClick={onNewGame}>New Game</button>
+            <h1 className="game-title">GUESS WORD</h1>
+            <button className="new-game-button" onClick={onNewGame}>New game</button>
         </div>
     );
 };
