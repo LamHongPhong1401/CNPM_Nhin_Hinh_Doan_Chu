@@ -13,15 +13,13 @@ const App = () => {
     const newGame = () => {
         setShowConfirm(true);
     };
-
-  /*  6c
-    Hệ thống thực hiện các bước sau:
-•	Đóng hộp thoại xác nhận.
-•	Đặt trạng thái trò chơi thành chưa tạm dừng.
-•	Bắt đầu trò chơi mới.
-•	Tạo lại các thành phần giao diện trò chơi.
-*/
-
+    /*  6c
+      Hệ thống thực hiện các bước sau:
+  •	Đóng hộp thoại xác nhận.
+  •	Đặt trạng thái trò chơi thành chưa tạm dừng.
+  •	Bắt đầu trò chơi mới.
+  •	Tạo lại các thành phần giao diện trò chơi.
+  */
     const confirmNewGame = () => {
         setShowConfirm(false);
         setError(null);
@@ -30,16 +28,11 @@ const App = () => {
             setIsGameStarted(true);
             setKey(prevKey => prevKey + 1);
         } catch (e) {
-        // 7b Hệ thống hiển thị thông báo lỗi cho người chơi, thông báo rằng không thể bắt đầu trò chơi mới.
+            // 7b Hệ thống hiển thị thông báo lỗi cho người chơi, thông báo rằng không thể bắt đầu trò chơi mới.
             setError('Please try again');
         }
     };
 // 7a Hệ thống đóng hộp thoại xác nhận và giữ nguyên trạng thái hiện tại của trò chơi mà không bắt đầu trò chơi mới.
-=======
-            setError('Please try again');
-        }
-    };
-
     const cancelNewGame = () => {
         setShowConfirm(false);
     };
@@ -66,7 +59,6 @@ const App = () => {
             {!isGameStarted ? (
                 <div>
                     {showConfirm && (
-
                         // 6b.	Hệ thống hiển thị hộp thoại xác nhận hỏi người chơi liệu họ có muốn bắt đầu trò chơi mới không.
                         <div className="confirm-dialog">
                             <p>Do you want to start a new game?</p>
@@ -78,14 +70,6 @@ const App = () => {
                         </div>
                     )}
                     {/* 7b Hệ thống hiển thị thông báo lỗi cho người chơi, thông báo rằng không thể bắt đầu trò chơi mới.*/}
-
-                        <div className="confirm-dialog">
-                            <p>Do you want to start a new game?</p>
-                            <button onClick={confirmNewGame}>YES</button>
-                            <button onClick={cancelNewGame}>NO</button>
-                        </div>
-                    )}
-
                     <Game onNewGame={newGame} />
                     {error && <p className="error-message">{error}</p>}
                 </div>
