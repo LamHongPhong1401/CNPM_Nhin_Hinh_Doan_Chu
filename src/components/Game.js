@@ -10,6 +10,8 @@ const Game = ({ onNewGame }) => {
     return (
         <div className="game-container" style={gameContainerStyle}>
             <h1 className="game-title">GUESS WORD</h1>
+            {/* 6a.	Người chơi nhấn vào nút "New game" trên màn hình chính.*/}
+
             <button className="new-game-button" onClick={onNewGame}>New game</button>
         </div>
     );
