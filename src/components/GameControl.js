@@ -1,5 +1,5 @@
 import React from 'react';
-import sampleImage from '../img/1000_F_345880772_zIT2mkdCzTthplO7xqaGGrMspN0jw0ll.jpg';
+import sampleImage from '../img/gameImage.png';
 import '../css/style.css';
 
 const GameControl = ({ onPause, onReset, onMainMenu, isPaused }) => {
