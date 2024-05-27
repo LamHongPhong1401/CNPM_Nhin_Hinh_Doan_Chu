@@ -11,7 +11,7 @@ export default function App() {
         <Router>
         <div className='App'>
           <Routes>
-            {/* 4.7.1 Access to JoinRoom */}
+            {/* 4.7.1.	The user accesses the Join Room */}
             <Route path='/joinRoom' element={<JoinRoom displayName={displayName} setDisplayName={setDisplayName}  setStompClient={setStompClient}/>} />
             <Route path='/chatRoom' element={<ChatRoom  displayName={displayName}  stompClient={stompClient} setStompClient={setStompClient}/>} />
           </Routes>
